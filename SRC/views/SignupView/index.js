@@ -29,7 +29,10 @@ const SignupView = ({ onPressSignupOptions, goBack }) => {
 
         <View style={styles.buttonContainer}>
           <TouchableOpacity onPress={onPressSignupOptions}>
-            <CustomButton title="Signup as a Student" />
+            <CustomButton
+              buttonContainer={{ width: '100%' }}
+              title="Signup as a Student"
+            />
           </TouchableOpacity>
 
           <TouchableOpacity>
@@ -38,6 +41,7 @@ const SignupView = ({ onPressSignupOptions, goBack }) => {
                 backgroundColor: 'white',
                 borderColor: COLORS.buttonBackground,
                 borderWidth: vw * 0.4,
+                width: '100%',
               }}
               title="Signup as a Organization"
               buttonText={{ color: COLORS.buttonText }}
@@ -50,6 +54,7 @@ const SignupView = ({ onPressSignupOptions, goBack }) => {
                 backgroundColor: 'white',
                 borderColor: COLORS.buttonBackground,
                 borderWidth: vw * 0.4,
+                width: '100%',
               }}
               title="Signup as a Instructor"
               buttonText={{ color: COLORS.buttonText }}

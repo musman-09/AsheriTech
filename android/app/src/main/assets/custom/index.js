@@ -7,16 +7,16 @@ export const fonts = {
       ios: 'DMSans-Bold',
     }),
     regular: Platform.select({
-      android: 'DMSans-Regular',
-      ios: 'DMSans-Regular',
+      android: 'DMSans_18pt-Regular',
+      ios: 'Aileron-Regular',
     }),
     light: Platform.select({
       android: 'Aileron-Light',
       ios: 'Aileron-Light',
     }),
     semibold: Platform.select({
-      android: 'DMSans-SemiBold',
-      ios: 'DMSans-SemiBold',
+      android: 'Aileron-SemiBold',
+      ios: 'Aileron-SemiBold',
     }),
   },
 };

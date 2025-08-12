@@ -23,7 +23,10 @@ const ForgotPasswordView = ({ handleSendCode, goBack }) => {
           <InputFeild placeholder={'Enter Email'} />
         </View>
         <TouchableOpacity onPress={handleSendCode}>
-          <CustomButton title={'Send Code'} />
+          <CustomButton
+            title={'Send Code'}
+            buttonContainer={{ width: '100%' }}
+          />
         </TouchableOpacity>
       </View>
     </View>

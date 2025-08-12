@@ -7,15 +7,7 @@ const useErrorHandlingHook = initialData => {
     setApiData(prevData => ({
       ...prevData,
       [key]: value,
-
-      [`error_${key}`]:
-        value === ''
-          ? key === 'userName'
-            ? 'Email address is required'
-            : key === 'receiptNumber'
-            ? 'Receipt number is required'
-            : `${key} is required`
-          : '',
+      [`error_${key}`]: value === '' ? `${key} is required` : '',
     }));
   };
 

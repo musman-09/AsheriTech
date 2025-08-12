@@ -1,5 +1,5 @@
 import { View, Text } from 'react-native';
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import useErrorHandlingHook from '../Hook/useErrorHandlingHook';
 
@@ -12,8 +12,8 @@ const useLoginViewModel = () => {
     apiData: loginApiData,
     checkForError: LoginCheckForError,
   } = useErrorHandlingHook({
-    userName: credentials?.userName,
-    password: credentials?.password,
+    userEmail: '',
+    password: '',
   });
 
   const handleLogin = () => {
@@ -28,11 +28,15 @@ const useLoginViewModel = () => {
     navigation.navigate('ForgotPassword');
   };
   return {
-    states: {},
+    states: {
+      loginApiData,
+    },
     functions: {
       handleLogin,
       onPressSignup,
       onPressForgotPass,
+      loginSetterForApiData,
+      LoginCheckForError,
     },
   };
 };

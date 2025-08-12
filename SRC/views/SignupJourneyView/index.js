@@ -40,7 +40,10 @@ const SignupJourneyView = ({
 
       {returnComponent[step]}
 
-      <TouchableOpacity onPress={journeyProceedButton}>
+      <TouchableOpacity
+        style={{ alignItems: 'center' }}
+        onPress={journeyProceedButton}
+      >
         <CustomButton title={returnButton[step]} />
       </TouchableOpacity>
 

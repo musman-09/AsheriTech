@@ -15,7 +15,6 @@ const CreateAccount = () => {
         <InputFeild
           inputStyle={{
             backgroundColor: COLORS.inputFeildColor,
-            width: '100%',
           }}
           placeholder={'Name'}
         />
@@ -23,7 +22,6 @@ const CreateAccount = () => {
         <InputFeild
           inputStyle={{
             backgroundColor: COLORS.inputFeildColor,
-            width: '100%',
           }}
           placeholder={'Email'}
         />
@@ -31,7 +29,6 @@ const CreateAccount = () => {
         <InputFeild
           inputStyle={{
             backgroundColor: COLORS.inputFeildColor,
-            width: '100%',
           }}
           placeholder={'Phone Number'}
         />
@@ -39,7 +36,6 @@ const CreateAccount = () => {
         <InputFeild
           inputStyle={{
             backgroundColor: COLORS.inputFeildColor,
-            width: '100%',
           }}
           mask={[
             /\d/,
@@ -77,12 +73,13 @@ const styles = StyleSheet.create({
   subContainer: {
     // borderWidth: 2,
     alignItems: 'center',
-    gap: vh * 2.5,
+    // gap: vh,
   },
   profile: {
     width: vw * 25,
     height: vw * 25,
     resizeMode: 'contain',
-    marginTop: vh * 12,
+    marginTop: vh * 8,
+    marginBottom: vh * 1.4,
   },
 });

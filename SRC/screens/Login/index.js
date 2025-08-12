@@ -5,11 +5,21 @@ import useLoginViewModel from '../../UseViewModels/useLoginViewModel';
 
 const Login = () => {
   const { states, functions } = useLoginViewModel();
-  const { onPressSignup, onPressForgotPass } = functions;
+  const {
+    onPressSignup,
+    onPressForgotPass,
+    loginSetterForApiData,
+    LoginCheckForError,
+  } = functions;
+
+  const { loginApiData } = states;
   return (
     <LoginView
       onPressSignup={onPressSignup}
       onPressForgotPass={onPressForgotPass}
+      loginSetterForApiData={loginSetterForApiData}
+      LoginCheckForError={LoginCheckForError}
+      loginApiData={loginApiData}
     />
   );
 };

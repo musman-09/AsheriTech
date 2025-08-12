@@ -19,8 +19,8 @@ export const styles = StyleSheet.create({
     gap: vh,
   },
   loginImage: {
-    width: 40 * vw,
-    height: 20 * vh,
+    width: 30 * vw,
+    height: 15 * vh,
     resizeMode: 'contain',
     // borderWidth: 2,
     // justifyContent: 'center',
@@ -35,12 +35,14 @@ export const styles = StyleSheet.create({
   inputContainer: {
     // marginTop: vh * 1.5,
     // borderWidth: 2,
-    gap: vh * 2,
+    borderColor: 'red',
   },
   inputStyle: {
     // backgroundColor: COLORS.grey,
     fontSize: vw * 4,
-    paddingVertical: vh * 2,
+    // paddingVertical: vh * 2,
+    // borderColor: 'red',
+    // borderWidth: 2,
   },
   forgotPassword: {
     // borderWidth: 2,
@@ -51,6 +53,9 @@ export const styles = StyleSheet.create({
   buttonsContainer: {
     marginTop: vh * 2,
     gap: vh,
+    // alignItems: 'center',
+    // width: '100%',
+    // borderWidth: 2,
   },
   loginWith: {
     flexDirection: 'row',

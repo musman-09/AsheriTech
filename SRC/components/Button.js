@@ -20,7 +20,11 @@ const styles = StyleSheet.create({
     // borderWidth: 2,
     borderRadius: vw * 1.5,
     paddingHorizontal: vw * 15,
+    justifyContent: 'center',
+    alignItems: 'center',
+    textAlign: 'center',
     backgroundColor: COLORS.buttonBackground,
+    width: '70%',
   },
   buttonText: {
     fontSize: vw * 5,

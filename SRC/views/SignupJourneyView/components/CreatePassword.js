@@ -17,9 +17,11 @@ const CreatePassword = () => {
           />
         </View>
 
-        <InputFeild placeholder={'Password'} />
+        <View style={{ marginTop: vh * 3 }}>
+          <InputFeild placeholder={'Password'} />
 
-        <InputFeild placeholder={'Confirm Password'} />
+          <InputFeild placeholder={'Confirm Password'} />
+        </View>
       </View>
     </View>
   );
@@ -32,8 +34,9 @@ const styles = StyleSheet.create({
     // flex: 1,
   },
   subContainer: {
-    gap: vh * 3,
+    // gap: vh * 3,
     paddingHorizontal: vw * 4,
+    // marginTop
   },
   heading: {
     marginTop: vh * 4,

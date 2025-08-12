@@ -48,7 +48,10 @@ const InputFeild = ({
         )}
       </View>
 
-      <DMSansBold style={styles.onError} name={onError} />
+      <DMSansBold
+        style={onError ? styles.onError : styles.withoutError}
+        name={onError}
+      />
     </>
   );
 };
@@ -59,21 +62,29 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     borderWidth: vw * 0.5,
+    borderRadius: vw,
+    alignItems: 'center',
+
+    borderColor: COLORS.inputFeildColor,
+    backgroundColor: COLORS.inputFeildBackgroundColor,
     // backgroundColor: COLORS.grey,
   },
   input: {
     // borderWidth: 1,
     paddingHorizontal: vw * 5,
     paddingVertical: vh * 2.2,
-    borderColor: '#ccc',
+    // borderColor: '#ccc',
+    // borderColor: COLORS.white,
     // height: vh * 3,
-    borderRadius: 8,
+    // borderRadius: 8,
     // fontSize: 16,
     width: '85%',
   },
   icon: {
     width: vw * 8,
     height: vw * 10,
+    resizeMode: 'contain',
+    // borderWidth: 2,
   },
   onError: {
     // borderWidth: 2,
@@ -81,5 +92,7 @@ const styles = StyleSheet.create({
     // alignContent: 'flex-start',
     color: COLORS.cardBackgroundRed,
     alignSelf: 'flex-start',
+    marginVertical: vh,
   },
+  withoutError: {},
 });

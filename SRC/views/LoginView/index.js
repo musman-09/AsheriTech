@@ -8,8 +8,15 @@ import CustomButton from '../../components/Button';
 import { COLORS } from '../../assets/themes/Colors';
 import { vh, vw } from '../../assets/themes/dimension';
 import { Color } from 'react-native/types_generated/Libraries/Animated/AnimatedExports';
+import { validateEmail } from '../../Validations';
 
-const LoginView = ({ onPressSignup, onPressForgotPass }) => {
+const LoginView = ({
+  onPressSignup,
+  onPressForgotPass,
+  loginApiData,
+  loginSetterForApiData,
+  LoginCheckForError,
+}) => {
   return (
     <View style={styles.loginContainer}>
       <View style={styles.loginImageContainer}>
@@ -22,12 +29,34 @@ const LoginView = ({ onPressSignup, onPressForgotPass }) => {
         <InputFeild
           placeholder={'Enter Your Email'}
           inputStyle={styles.inputStyle}
+          value={loginApiData?.userEmail ?? undefined}
+          onChangeText={text => {
+            loginSetterForApiData('userEmail', text);
+            const errorMsg = validateEmail(text);
+            loginSetterForApiData('error_userEmail', errorMsg);
+          }}
+          onError={
+            typeof loginApiData?.error_userEmail === 'string'
+              ? loginApiData.error_userEmail.charAt(0).toUpperCase() +
+                loginApiData.error_userEmail.slice(1)
+              : undefined
+          }
         />
 
         <InputFeild
           placeholder={'Enter Password'}
           inputStyle={styles.inputStyle}
           textSecurity={true}
+          value={loginApiData?.password ?? undefined}
+          onChangeText={text => {
+            loginSetterForApiData('password', text);
+          }}
+          onError={
+            typeof loginApiData?.error_password === 'string'
+              ? loginApiData.error_password.charAt(0).toUpperCase() +
+                loginApiData.error_password.slice(1)
+              : undefined
+          }
           closeEyeIcon={icons.eyeClosed}
         />
       </View>
@@ -44,7 +73,10 @@ const LoginView = ({ onPressSignup, onPressForgotPass }) => {
         <TouchableOpacity>
           <CustomButton
             title={'Login'}
-            buttonContainer={{ backgroundColor: COLORS.buttonBackground }}
+            buttonContainer={{
+              backgroundColor: COLORS.buttonBackground,
+              width: '100%',
+            }}
           />
         </TouchableOpacity>
       </View>
