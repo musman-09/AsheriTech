@@ -1,0 +1,15 @@
+export const images = {
+  loginDoor: require('./images/loginDoor.png'),
+  signupImage: require('./images/signupFrame.png'),
+};
+
+export const icons = {
+  facebook: require('./icons/facebook.png'),
+  google: require('./icons/google.png'),
+  apple: require('./icons/apple.png'),
+  backArrow: require('./icons/backArrow.png'),
+  profile: require('./icons/profile.png'),
+  success: require('./icons/success.png'),
+  eyeClosed: require('./icons/eyeClosed.png'),
+  eyeOpen: require('./icons/eyeOpen.png'),
+};
