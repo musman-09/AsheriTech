@@ -11,6 +11,9 @@ import Verification from './SRC/views/SignupJourneyView/components/Verification'
 import CreatePassword from './SRC/views/SignupJourneyView/components/CreatePassword';
 import ResultModal from './SRC/components/resultModal';
 import AuthStack from './SRC/navigation/AuthStack';
+import { store } from './SRC/redux/store';
+import { Provider } from 'react-redux';
+import Home from './SRC/screens/Home';
 
 function App() {
   return (
@@ -23,7 +26,8 @@ function App() {
       {/* <Verification /> */}
       {/* <CreatePassword /> */}
       {/* <ResultModal /> */}
-      <AuthStack />
+      {/* <AuthStack /> */}
+      <Home />
     </NavigationContainer>
   );
 }

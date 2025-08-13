@@ -58,4 +58,5 @@ export const COLORS = {
   placeholderTextCOlor: 'rgba(68, 69, 80, 1)',
   inputFeildColor: 'rgba(233, 233, 233, 1)',
   inputFeildBackgroundColor: 'rgba(247, 248, 249, 1)',
+  headingColor: 'rgba(68, 69, 80, 1)',
 };

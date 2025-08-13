@@ -1,15 +1,17 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, TouchableOpacity, View } from 'react-native';
 import DMSansRegular from './DMSansRegular';
 import { vh, vw } from '../assets/themes/dimension';
 import { COLORS } from '../assets/themes/Colors';
 import DMSansBold from './DMSansBold';
 
-const CustomButton = ({ title, buttonContainer, buttonText }) => {
+const CustomButton = ({ title, buttonContainer, buttonText, onPress }) => {
   return (
-    <View style={[styles.container, buttonContainer]}>
-      <DMSansBold style={[styles.buttonText, buttonText]} name={title} />
-    </View>
+    <TouchableOpacity onPress={onPress}>
+      <View style={[styles.container, buttonContainer]}>
+        <DMSansBold style={[styles.buttonText, buttonText]} name={title} />
+      </View>
+    </TouchableOpacity>
   );
 };
 
