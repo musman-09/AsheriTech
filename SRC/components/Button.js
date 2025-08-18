@@ -7,11 +7,9 @@ import DMSansBold from './DMSansBold';
 
 const CustomButton = ({ title, buttonContainer, buttonText, onPress }) => {
   return (
-    <TouchableOpacity onPress={onPress}>
-      <View style={[styles.container, buttonContainer]}>
-        <DMSansBold style={[styles.buttonText, buttonText]} name={title} />
-      </View>
-    </TouchableOpacity>
+    <View style={[styles.container, buttonContainer]}>
+      <DMSansBold style={[styles.buttonText, buttonText]} name={title} />
+    </View>
   );
 };
 

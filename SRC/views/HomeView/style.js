@@ -10,7 +10,6 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     // borderWidth: 2,
     justifyContent: 'space-between',
-
     alignItems: 'center',
     // marginHorizontal: vw * 2,
     paddingHorizontal: vw * 1.6,
@@ -50,5 +49,21 @@ export const styles = StyleSheet.create({
     fontWeight: '700',
 
     textAlign: 'left',
+  },
+  courseCategories: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+
+    marginHorizontal: vw * 2,
+    marginTop: vh * 1.5,
+  },
+  courseFont: {
+    fontSize: vw * 6,
+    color: COLORS.headingColor,
+  },
+  viewAll: {
+    fontSize: vw * 4,
+    color: COLORS.headingColor,
   },
 });

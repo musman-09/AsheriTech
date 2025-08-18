@@ -4,8 +4,9 @@ import HomeView from '../../views/HomeView';
 import useHomeViewModels from '../../UseViewModels/useHomeViewModels';
 
 const Home = () => {
-  const {} = useHomeViewModels();
-  return <HomeView />;
+  const { functions, states } = useHomeViewModels();
+  const { tabsData } = states;
+  return <HomeView tabsData={tabsData} />;
 };
 
 export default Home;
