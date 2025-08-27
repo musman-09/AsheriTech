@@ -66,4 +66,8 @@ export const styles = StyleSheet.create({
     fontSize: vw * 4,
     color: COLORS.headingColor,
   },
+  coursesCardCategories: {
+    marginHorizontal: vw * 2,
+    marginTop: vh * 1.5,
+  },
 });

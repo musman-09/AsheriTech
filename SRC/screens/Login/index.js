@@ -10,6 +10,7 @@ const Login = () => {
     onPressForgotPass,
     loginSetterForApiData,
     LoginCheckForError,
+    handleLogin,
   } = functions;
 
   const { loginApiData } = states;
@@ -20,6 +21,7 @@ const Login = () => {
       loginSetterForApiData={loginSetterForApiData}
       LoginCheckForError={LoginCheckForError}
       loginApiData={loginApiData}
+      handleLogin={handleLogin}
     />
   );
 };

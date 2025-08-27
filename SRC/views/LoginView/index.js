@@ -16,6 +16,7 @@ const LoginView = ({
   loginApiData,
   loginSetterForApiData,
   LoginCheckForError,
+  handleLogin,
 }) => {
   return (
     <View style={styles.loginContainer}>
@@ -70,7 +71,7 @@ const LoginView = ({
       </View>
 
       <View style={styles.buttonsContainer}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={handleLogin}>
           <CustomButton
             title={'Login'}
             buttonContainer={{

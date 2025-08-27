@@ -14,21 +14,29 @@ import AuthStack from './SRC/navigation/AuthStack';
 import { store } from './SRC/redux/store';
 import { Provider } from 'react-redux';
 import Home from './SRC/screens/Home';
+import Tab from './SRC/components/Tab';
+import CoursesCard from './SRC/components/coursesCard';
+import MainStack from './SRC/navigation/MainStack';
 
 function App() {
   return (
-    <NavigationContainer>
-      {/* <Login /> */}
-      {/* <Signup /> */}
-      {/* <SignupJourney /> */}
-      {/* <TopHeader /> */}
-      {/* <CreateAccount /> */}
-      {/* <Verification /> */}
-      {/* <CreatePassword /> */}
-      {/* <ResultModal /> */}
-      {/* <AuthStack /> */}
-      <Home />
-    </NavigationContainer>
+    <Provider store={store}>
+      <NavigationContainer>
+        {/* <Login /> */}
+        {/* <Signup /> */}
+        {/* <SignupJourney /> */}
+        {/* <TopHeader /> */}
+        {/* <CreateAccount /> */}
+        {/* <Verification /> */}
+        {/* <CreatePassword /> */}
+        {/* <ResultModal /> */}
+        {/* <AuthStack /> */}
+        <MainStack />
+        {/* <Home /> */}
+        {/* <Tab name={'asdasd'} /> */}
+        {/* <CoursesCard /> */}
+      </NavigationContainer>
+    </Provider>
   );
 }
 

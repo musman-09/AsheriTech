@@ -5,8 +5,8 @@ import useHomeViewModels from '../../UseViewModels/useHomeViewModels';
 
 const Home = () => {
   const { functions, states } = useHomeViewModels();
-  const { tabsData } = states;
-  return <HomeView tabsData={tabsData} />;
+  const { tabsData, courseData } = states;
+  return <HomeView tabsData={tabsData} courseData={courseData} />;
 };
 
 export default Home;

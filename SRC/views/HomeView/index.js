@@ -5,6 +5,7 @@ import {
   ImageBackground,
   TouchableOpacity,
   FlatList,
+  ScrollView,
 } from 'react-native';
 import React from 'react';
 import { icons, images } from '../../assets';
@@ -16,13 +17,14 @@ import { COLORS } from '../../assets/themes/Colors';
 import TopHeader from '../../components/TopHeader';
 import DMSansRegular from '../../components/DMSansRegular';
 import Tab from '../../components/Tab';
+import CoursesCard from '../../components/coursesCard';
 
-const HomeView = ({ tabsData }) => {
-  const renderItem = data => {
-    <>
-      {console.log(data, 'data')}
-      <Tab name={data?.name} />;
-    </>;
+const HomeView = ({ tabsData, courseData }) => {
+  const renderItem = ({ item }) => {
+    return <Tab name={item?.name} />;
+  };
+  const renderItemCourses = ({ item }) => {
+    return <CoursesCard image={item.Image} name={item.name} />;
   };
   return (
     <>
@@ -38,57 +40,85 @@ const HomeView = ({ tabsData }) => {
           </View>
         </View>
 
-        <View
-          style={
-            {
-              // borderWidth: 2,
-            }
-          }
-        >
-          <ImageBackground
-            source={images.homeWallpaper}
-            style={styles.homeWallpaper}
-          >
-            <View
-              style={{
-                height: '100%',
-                justifyContent: 'center',
-              }}
+        <ScrollView>
+          <View>
+            <ImageBackground
+              source={images.homeWallpaper}
+              style={styles.homeWallpaper}
             >
-              <View style={{ width: vw * 50, left: 10 }}>
-                <DMSansBold
-                  name={'Seamless\nTech\nEducation'}
-                  style={styles.seamlessTitle}
-                />
-
-                <TouchableOpacity>
-                  <CustomButton
-                    title={'Browse Now'}
-                    buttonContainer={{
-                      backgroundColor: COLORS.buttonBackground,
-                      width: '80%',
-                      paddingHorizontal: vw,
-                      top: vh * 0.5,
-                    }}
-                    container={styles.browseButton}
+              <View
+                style={{
+                  height: '100%',
+                  justifyContent: 'center',
+                }}
+              >
+                <View style={{ width: vw * 50, left: 10 }}>
+                  <DMSansBold
+                    name={'Seamless\nTech\nEducation'}
+                    style={styles.seamlessTitle}
                   />
-                </TouchableOpacity>
+
+                  <TouchableOpacity>
+                    <CustomButton
+                      title={'Browse Now'}
+                      buttonContainer={{
+                        backgroundColor: COLORS.buttonBackground,
+                        width: '80%',
+                        paddingHorizontal: vw,
+                        top: vh * 0.5,
+                      }}
+                      container={styles.browseButton}
+                    />
+                  </TouchableOpacity>
+                </View>
               </View>
-            </View>
-          </ImageBackground>
-        </View>
+            </ImageBackground>
+          </View>
 
-        <View style={styles.courseCategories}>
-          <DMSansBold style={styles.courseFont} name={'Course Categories'} />
-          <DMSansRegular style={styles.viewAll} name={'View All'} />
-        </View>
+          <View style={styles.courseCategories}>
+            <DMSansBold style={styles.courseFont} name={'Course Categories'} />
+            <DMSansRegular style={styles.viewAll} name={'View All'} />
+          </View>
 
-        <FlatList
-          data={tabsData}
-          contentContainerStyle={{ borderWidth: 2, height: 100 }}
-          style={{ backgroundColor: 'red' }}
-          renderItem={renderItem}
-        />
+          <View>
+            <FlatList
+              data={tabsData}
+              renderItem={renderItem}
+              keyExtractor={(item, index) => index.toString()}
+              numColumns={3}
+              columnWrapperStyle={{
+                flexWrap: 'wrap',
+
+                marginBottom: vw,
+                gap: vw * 4,
+              }}
+              contentContainerStyle={{
+                paddingHorizontal: vw,
+                gap: vw * 1,
+                marginTop: vh,
+              }}
+            />
+          </View>
+
+          <View style={styles.courseCategories}>
+            <DMSansBold style={styles.courseFont} name={'Suggested Course'} />
+            <DMSansRegular style={styles.viewAll} name={'View All'} />
+          </View>
+
+          <View style={styles.coursesCardCategories}>
+            <FlatList
+              data={courseData}
+              renderItem={renderItemCourses}
+              numColumns={2}
+              keyExtractor={(item, index) => index.toString()}
+              contentContainerStyle={{ gap: vw * 2 }}
+              columnWrapperStyle={{
+                justifyContent: 'space-between',
+                // marginBottom: vh * 2,
+              }}
+            />
+          </View>
+        </ScrollView>
       </View>
     </>
   );

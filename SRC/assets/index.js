@@ -17,4 +17,7 @@ export const icons = {
   hamBurger: require('./icons/hamburger.png'),
   search: require('./icons/serach.png'),
   person: require('./icons/Person.png'),
+  ml: require('./icons/machineLearning.png'),
+  bot: require('./icons/bot.png'),
+  wishlist: require('./icons/wishlist.png'),
 };

@@ -6,7 +6,7 @@ import { vh, vw } from '../../assets/themes/dimension';
 const Tab = ({ name }) => {
   return (
     <View style={styles.container}>
-      <DMSansRegular />
+      <DMSansRegular style={styles.fontSize} name={name} />
     </View>
   );
 };
@@ -15,15 +15,15 @@ export default Tab;
 
 const styles = StyleSheet.create({
   container: {
-    borderWidth: 2,
-    backgroundColor: 'white',
-    // justifyContent: 'center',
-
+    borderRadius: vw * 6,
     alignItems: 'center',
-
     paddingVertical: vh * 1.5,
     flexDirection: 'row',
-    paddingHorizontall: vw * 1.5,
-    flex: 1,
+    paddingHorizontal: vw * 4.5,
+    borderWidth: 2,
+    // width: '30%',
+  },
+  fontSize: {
+    fontSize: vw * 5,
   },
 });
